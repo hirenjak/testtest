@@ -1,0 +1,213 @@
+Configs: {
+	ExtractionConfig: {
+		DisplayName: Extraction Config
+
+		Headers: {
+			ExtractionHeader: Extract Localization Header
+		}
+
+		ExtractLocalization: {
+			Label: Extract Localization
+			Tooltip: If true, outputs Localization file on reload. Remember to turn it off normally.
+		}
+
+		ExtractCategory: {
+			Label: Extract Category
+			Tooltip:
+				'''
+				Select the category of output. [All, Vanilla, Mods]
+				Extracting Vanilla localization files is only available when "{$Configs.ExternalLocalizerConfig.WhenToOutput.Label}" is set to "{$Configs.WhenToOutputOption.AfterSetup.Label}".
+				'''
+		}
+
+		ExtractAtIndividualFiles: {
+			Label: Extract At Individual Files
+			Tooltip: If ture, output to separate files for each type of mod.
+		}
+
+		WhenToOutput: {
+			Label: When To Output
+			Tooltip:
+				'''
+				Option of timing for output.
+				- AfterModFilesAreLoaded: Just after loading the mod's original localization file. No modifications have been made to the file.
+				- AfterTranslatedByThisMod: After the mod has been translated.
+				- AfterSetup: After all mods have been loaded. Note that some mods may not have finished all preparations.
+				'''
+		}
+
+		LocalizationDir: {
+			Label: Localization Dirctory
+			Tooltip: ""
+		}
+
+		ExtractionDir: {
+			Label: Extraction Dirctory
+			Tooltip: ""
+		}
+	}
+
+	ExtractCategoryOption: {
+		Tooltip: ""
+
+		All: {
+			Label: All
+		}
+
+		Vanilla: {
+			Label: Vanilla
+		}
+
+		Mods: {
+			Label: Mods
+		}
+	}
+
+	WhenToOutputOption: {
+		Tooltip: ""
+
+		AfterFilesAreLoaded: {
+			Label: After Mod Files Are Loaded
+		}
+
+		AfterTranslatedByThisMod: {
+			Label: After Translated By This Mod
+		}
+
+		AfterSetup: {
+			Label: After Setup
+		}
+	}
+
+	LocalizationConfig: {
+		DisplayName: Localization Config
+
+		Headers: {
+			PatchHeader: Patch
+			LocalizationHeader: Localization
+			FiltersHeader: Filters
+		}
+
+		EnableBossChecklistPatch: {
+			Label: Enable Boss Checklist Patch
+			Tooltip: Fix problem that wide characters cannot be displayed in the message box
+		}
+
+		EnableFargoEnemyModifiersPatch: {
+			Label: Enable Fargo Enemy Modifiers Patch
+			Tooltip: Fix problem that text on monsters cannot be localized
+		}
+
+		EnableLocalizer: {
+			Label: Enable Localizer
+			Tooltip: If true, load localization files from external sources.
+		}
+
+		LanguageKey: {
+			Label: Language Key
+			Tooltip: Specify a string representing the language. Example: ja-JP
+		}
+
+		CustomFilters: {
+			Label: Custom Filters
+			Tooltip:
+				'''
+				If a path matches this, its load is canceled.
+				Regular expressions can be used.
+				For example:
+				- To exclude vanilla item names -> ^ItemName\.
+				- To exclude mod item names ->  Mods\..*?\.Items\..*\.DisplayName$
+				'''
+		}
+
+		PresetFilters: {
+			Label: Presets
+			Tooltip: ""
+		}
+
+		FilterTemplates: {
+			DamageClasses: Exclude DamageClasses
+			InfoDisplays: Exclude InfoDisplays
+			Biomes: Exclude Biomes
+
+			Buffs: {
+				Name: Exclude Buffs Name
+				Tooltip: Exclude Buffs Tooltip
+			}
+
+			Items: {
+				Name: Exclude Items Name
+				Tooltip: Exclude Items Tooltip
+			}
+
+			Prefixes: Exclude Prefixes
+			Projectiles: Exclude Projectiles
+			ResourceDisplaySets: Exclude ResourceDisplaySets
+
+			Tiles: {
+				ContainerName: Exclude Tiles ContainerName
+				MapEntry: Exclude Tiles MapEntry
+			}
+
+			Keybinds: Exclude Keybinds
+
+			NPC: {
+				Name: Exclude NPC's Names
+				Mood: Exclude NPC's Messages
+			}
+
+			Config: Exclude Config
+		}
+
+		ItemNameFormat: {
+			Label: Format of item names
+			Tooltip: ""
+		}
+
+		Test: {
+			Label: Test
+			Tooltip: ""
+		}
+
+		Test2: {
+			Label: Test2
+			Tooltip: ""
+		}
+	}
+
+	ItemNameFormatOption: {
+		Tooltip: ""
+
+		Normal: {
+			Label: '''"[c/FFAAFF:{Translated}]"'''
+		}
+
+		WithSub: {
+			Label: '''"[c/FFFFAA:{Original}] ([c/FFAAFF:{Translated}])"'''
+		}
+
+		WithOriginal: {
+			Label: '''"[c/FFAAFF:{Translated}] ([c/FFFFAA:{Original}])"'''
+		}
+	}
+
+	Filter: {
+		Tooltip: ""
+
+		LocalizeKey: {
+			Label: Localize Key
+			Tooltip: ""
+		}
+
+		Regexes: {
+			Label: Regexes
+			Tooltip: ""
+		}
+
+		Enable: {
+			Label: Enable
+			Tooltip: ""
+		}
+	}
+}
+
